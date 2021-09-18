@@ -17,7 +17,7 @@
 #pragma once
 // This auto-generated file defines the export functions needed when we're
 // using a shared library on Windows.
-#include <cmake_cuda_library_export.h>
+#include <cmake_cuda_library_project_export.h>
 
 /**
   * @file cmake_cuda_library.h
@@ -31,7 +31,7 @@ extern "C" {
   /********************************************************************************/
   /* Status return values declared here. */
   #define CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK 0
-  CMAKE_CUDA_LIBRARY_EXPORT const char* cmake_cuda_library_project_ErrorMessage(int status);
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char* cmake_cuda_library_project_ErrorMessage(int status);
 
   /********************************************************************************/
   /* Function declarations go here.  They should share a common prefix to avoid
@@ -40,15 +40,15 @@ extern "C" {
    * using shared libraries on Windows.
    */
 
-  CMAKE_CUDA_LIBRARY_EXPORT int cmake_cuda_library_project_init();
-  CMAKE_CUDA_LIBRARY_EXPORT int cmake_cuda_library_project_destroy();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT int cmake_cuda_library_project_init();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT int cmake_cuda_library_project_destroy();
 
-  CMAKE_CUDA_LIBRARY_EXPORT const char * cmake_cuda_library_project_get_version();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char * cmake_cuda_library_project_get_version();
 
   /* You may want a unit test function that a client can call to let them know the library
    * is behaving properly.  This one returns an empty string on success and a string describing
    * all errors on failure. */
-  CMAKE_CUDA_LIBRARY_EXPORT const char *cmake_cuda_library_project_test();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char *cmake_cuda_library_project_test();
 
 #ifdef __cplusplus
 }

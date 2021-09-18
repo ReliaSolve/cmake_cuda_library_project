@@ -1,4 +1,4 @@
-# cmake_library_project
+# cmake_cuda_library_project
 
 This repository contains an example library, including example and test programs,
 that builds and installs using CMake.  It can be built as a static library or as
@@ -11,12 +11,12 @@ systems could be used).  On Ubuntu Linux, this can be done as follows
 
     sudo apt install cmake
     cd; mkdir src; cd src; git clone https://github.com/reliasolve/cmake_library_project
-    cd; mkdir -p build/cmake_library_project; cd build/cmake_library_project
-    cmake ../../src/cmake_library_project
+    cd; mkdir -p build/cmake_cuda_library_project; cd build/cmake_cuda_library_project
+    cmake ../../src/cmake_cuda_library_project
     make
 
 **Fork:** To use this to define an actual library, find and replace all instances of
-"cmake_library_project" and "CMAKE_LIBRARY_PROJECT" with a prefix that matches the
+"cmake_cuda_library_project" and "CMAKE_CUDA_LIBRARY_PROJECT" with a prefix that matches the
 name of the project being implemented.  It does not need to be the full name and can
 be an abbreviation.  Then implement new functions, test programs, and examples as needed.
 
@@ -45,7 +45,7 @@ fail, so it is worth your while to have them return always with
 success and have higher routines check the return value so that
 when it later changes the other code will be prepared.
 * To provide a human-readible error message for the return values,
-a function such as cmake_library_project_ErrorMessage() should be provided that converts
+a function such as cmake_cuda_library_project_ErrorMessage() should be provided that converts
 the value into a string.  This is useful to application that want to let
 the user know what went wrong.  All internally-defined status returns should have
 an entry in this function (OK, warnings, and errors).

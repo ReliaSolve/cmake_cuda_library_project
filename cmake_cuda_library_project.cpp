@@ -21,7 +21,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "cmake_cuda_library.h"
+#include "cmake_cuda_library_project.h"
 #include "cuda_kernels.h"
 #include <vector>
 #include <string.h>

@@ -24,7 +24,7 @@
 #pragma once
  // This auto-generated file defines the export functions needed when we're
  // using a shared library on Windows.
-#include <cmake_cuda_library_export.h>
+#include <cmake_cuda_library_project_export.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,7 +51,7 @@ extern "C" {
   /// @param [in] nx Number of pixels in X in the image.
   /// @param [in] ny Number of pixels in Y in the image.
   /// @return Empty string on success.  String describing the problem on failure.
-  CMAKE_CUDA_LIBRARY_EXPORT const char* cuda_compute_point_sum(
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char* cuda_compute_point_sum(
     const POINT *points, int numPoints, FLOATPIXEL *image, int nx, int ny);
 
 #ifdef __cplusplus
