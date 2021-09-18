@@ -17,10 +17,10 @@
 #pragma once
 // This auto-generated file defines the export functions needed when we're
 // using a shared library on Windows.
-#include <cmake_library_project_export.h>
+#include <cmake_cuda_library_project_export.h>
 
 /**
-  * @file cmake_library_project.h
+  * @file cmake_cuda_library_project.h
   * @brief Example library compiled using CMake.
   */
 
@@ -30,25 +30,25 @@ extern "C" {
 
   /********************************************************************************/
   /* Status return values declared here. */
-  #define CMAKE_LIBRARY_PROJECT_STATUS_OK 0
-  CMAKE_LIBRARY_PROJECT_EXPORT const char* cmake_library_project_ErrorMessage(int status);
+  #define CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK 0
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char* cmake_cuda_library_project_ErrorMessage(int status);
 
   /********************************************************************************/
   /* Function declarations go here.  They should share a common prefix to avoid
    * colliding with other symbols in the global namespace.
-   * Each should have CMAKE_LIBRARY_PROJECT_EXPORT in front of them to support
+   * Each should have CMAKE_CUDA_LIBRARY_PROJECT_EXPORT in front of them to support
    * using shared libraries on Windows.
    */
 
-  CMAKE_LIBRARY_PROJECT_EXPORT int cmake_library_project_init();
-  CMAKE_LIBRARY_PROJECT_EXPORT int cmake_library_project_destroy();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT int cmake_cuda_library_project_init();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT int cmake_cuda_library_project_destroy();
 
-  CMAKE_LIBRARY_PROJECT_EXPORT const char * cmake_library_project_get_version();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char * cmake_cuda_library_project_get_version();
 
   /* You may want a unit test function that a client can call to let them know the library
    * is behaving properly.  This one returns an empty string on success and a string describing
    * all errors on failure. */
-  CMAKE_LIBRARY_PROJECT_EXPORT const char *cmake_library_project_test();
+  CMAKE_CUDA_LIBRARY_PROJECT_EXPORT const char *cmake_cuda_library_project_test();
 
 #ifdef __cplusplus
 }

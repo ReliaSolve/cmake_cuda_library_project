@@ -15,13 +15,13 @@
  */
 
 // Implements the C-interface library functions that are described in the
-// cmake_library_project.h header file.
+// cmake_cuda_library_project.h header file.
 
 #ifdef _WIN32
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "cmake_library_project.h"
+#include "cmake_cuda_library_project.h"
 
 //===================================================================================
 // C++ objects and methods as needed to implement the functions.  Anything in this section
@@ -31,32 +31,32 @@
 // Function definitions go here.
 
 extern "C" {
-  const char* cmake_library_project_ErrorMessage(int status)
+  const char* cmake_cuda_library_project_ErrorMessage(int status)
   {
     switch (status) {
-    case CMAKE_LIBRARY_PROJECT_STATUS_OK:
+    case CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK:
       return "No Error";
     default:
       return "Unrecognized status";
     }
   }
 
-  int cmake_library_project_init()
+  int cmake_cuda_library_project_init()
   {
-    return CMAKE_LIBRARY_PROJECT_STATUS_OK;
+    return CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK;
   }
 
-  int cmake_library_project_destroy()
+  int cmake_cuda_library_project_destroy()
   {
-    return CMAKE_LIBRARY_PROJECT_STATUS_OK;
+    return CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK;
   }
 
-  const char* cmake_library_project_get_version()
+  const char* cmake_cuda_library_project_get_version()
   {
     return "1.0.0";
   }
 
-  const char* cmake_library_project_test()
+  const char* cmake_cuda_library_project_test()
   {
     return "";
   }

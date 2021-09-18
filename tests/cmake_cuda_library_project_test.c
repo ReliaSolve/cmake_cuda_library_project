@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-#include <cmake_library_project.h>
+#include <cmake_cuda_library_project.h>
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, const char* argv[])
+int main(int argc, const char *argv[])
 {
-  int ret;
-  if (CMAKE_LIBRARY_PROJECT_STATUS_OK != (ret = cmake_library_project_init())) {
-    fprintf(stderr, "Error initializing: %s\n", cmake_library_project_ErrorMessage(ret));
-  }
-  printf("Library version: %s\n", cmake_library_project_get_version());
-  if (CMAKE_LIBRARY_PROJECT_STATUS_OK != (ret = cmake_library_project_destroy())) {
-    fprintf(stderr, "Error destroying: %s\n", cmake_library_project_ErrorMessage(ret));
+  const char* ret = cmake_cuda_library_project_test();
+  if (strlen(ret) == 0) {
+    printf("Success!\n");
+    return 0;
+  } else {
+    fprintf(stderr, "Failure:!\n%s",ret);
+    return 1;
   }
 }
