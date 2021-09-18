@@ -21,7 +21,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "cmake_cuda_library_project.h"
+#include "cmake_cuda_library.h"
+#include "cuda_kernels.h"
+#include <vector>
+#include <string.h>
 
 //===================================================================================
 // C++ objects and methods as needed to implement the functions.  Anything in this section
@@ -58,6 +61,25 @@ extern "C" {
 
   const char* cmake_cuda_library_project_test()
   {
+    // Test non-CUDA routines
+    if (cmake_cuda_library_project_init() != CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK) {
+      return "cmake_cuda_library_project_init() failed";
+    }
+    if (cmake_cuda_library_project_destroy() != CMAKE_CUDA_LIBRARY_PROJECT_STATUS_OK) {
+      return "cmake_cuda_library_project_destroy() failed";
+    }
+
+    // Test CUDA routines
+    int nx = 200, ny = 200;
+    POINT points[] = { {100.f,100.f}, {105.f, 105.f} };
+    std::vector<FLOATPIXEL> image(nx * ny);
+    const char* ret = cuda_compute_point_sum(points, 
+      static_cast<int>(sizeof points / sizeof points[0]), image.data(), nx, ny);
+    if (strlen(ret) != 0) {
+      return ret;
+    }
+
+    // Everything worked
     return "";
   }
 }
